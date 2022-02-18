@@ -1,0 +1,17 @@
+apiVersion: v2
+name: aps-reference-app
+description: A reference app demonstrating best practices in API Gateway Security
+type: application
+version: 0.1
+appVersion: 0.1
+dependencies:
+  - alias: ui
+    name: generic-api
+    version: 0.1.22
+    repository: http://bcgov.github.io/helm-charts
+    condition: app.enabled
+  - alias: api
+    name: generic-api
+    version: 0.1.22
+    repository: http://bcgov.github.io/helm-charts
+    condition: api.enabled
