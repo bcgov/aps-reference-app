@@ -2,14 +2,14 @@
 
 This project is an example of a UI and API integrated with APS Kong API Gateway and Keycloak Identity Provider.
 
-## Deploying in Openshift
+## Deploying to Openshift
 
 ### Build and Push Packages to Artifactory
 
 Reference: https://github.com/BCDevOps/developer-experience/blob/master/apps/artifactory/DEVHUB-README.md
 
 ```
-export REPO_NAME="a264-docker"
+export REPO_NAME=""
 
 docker login -u <USER_NAME> -p <USER_PASSWORD> artifacts.developer.gov.bc.ca/${REPO_NAME}
 
