@@ -2,9 +2,9 @@
 
 This project is an example of a UI and API integrated with APS Kong API Gateway and Keycloak Identity Provider.
 
-## Getting Started
+## Deploying in Openshift
 
-### Register Packages
+### Build and Push Packages to Artifactory
 
 Reference: https://github.com/BCDevOps/developer-experience/blob/master/apps/artifactory/DEVHUB-README.md
 
@@ -30,7 +30,7 @@ kubectl create secret docker-registry artifactory-pull \
     --docker-email=<username>@<namespace>.local
 ```
 
-### Deploy with Helm
+### Deploy UI and API with Helm
 
 ```
 helm dependency update ./chart

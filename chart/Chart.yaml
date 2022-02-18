@@ -9,7 +9,7 @@ dependencies:
     name: generic-api
     version: 0.1.22
     repository: http://bcgov.github.io/helm-charts
-    condition: app.enabled
+    condition: ui.enabled
   - alias: api
     name: generic-api
     version: 0.1.22
