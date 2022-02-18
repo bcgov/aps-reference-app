@@ -1,3 +1,9 @@
+## FASTAPI
 __pycache__
 *.tgz
+
+## NEXTJS
+.next
+dist
+node_modules
 LOCAL.md

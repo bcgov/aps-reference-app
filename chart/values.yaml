@@ -10,35 +10,15 @@ ui:
   securityContext:
     runAsUser: *uid_gid
 
-  config:
-    - filename: index.html
-      mountPath: /usr/share/nginx/html/index.html
-      contents: |
-        <html><body>My web service</body></html>
-    - filename: nginx.conf
-      mountPath: /etc/nginx/nginx.conf
-      contents: |
-        worker_processes  1;
-        error_log  /tmp/error.log;
-        pid        /tmp/nginx.pid;
-        worker_rlimit_nofile 8192;
+  image:
+    repository: artifacts.developer.gov.bc.ca/a264-docker/aps-ref-ui
+    pullPolicy: Always
+    tag: latest
 
-        events {
-          worker_connections  1024;
-        }
+  containerPort: 8000
 
-        http {
-            client_body_temp_path /tmp/client_temp;
-            proxy_temp_path       /tmp/proxy_temp_path;
-            fastcgi_temp_path     /tmp/fastcgi_temp;
-            uwsgi_temp_path       /tmp/uwsgi_temp;
-            scgi_temp_path        /tmp/scgi_temp;
-
-            server {
-              listen       8000;
-              root         /usr/share/nginx/html;
-            }
-        }
+  imagePullSecrets:
+    - name: artifactory-pull
 
 api:
   enabled: true
