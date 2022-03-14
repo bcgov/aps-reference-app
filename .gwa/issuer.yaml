@@ -1,0 +1,16 @@
+kind: CredentialIssuer
+name: APS Reference App
+namespace: aps-reference
+description: Authorization Profile for APS Reference App
+flow: authorization-code
+mode: auto
+authPlugin: oidc
+clientRoles: [apsref-viewer, apsref-admin]
+availableScopes: []
+owner: acope@idir
+environmentDetails:
+  - environment: dev
+    issuerUrl: https://dev.oidc.gov.bc.ca/auth/realms/xtmke7ky
+    clientId: aps-reference-issuer
+    clientRegistration: managed
+    clientSecret: 5444e3c0-8453-4696-b7ee-3a38390b8b95

@@ -1,0 +1,11 @@
+kind: Product
+appId: 013ABC21F048
+name: Reference App UI
+dataset: aps-reference-app
+environments:
+  - id: C5F4D8B2
+    name: dev
+    approval: false
+    flow: authorization-code
+    credentialIssuer: APS Reference App
+    services: []

@@ -1,0 +1,10 @@
+kind: DraftDataset
+name: aps-reference-app
+organization: ministry-of-citizens-services
+organizationUnit: databc
+title: APS Reference App
+tags: [reference, standards, openapi]
+license_title: Access Only
+view_audience: Government
+security_class: LOW-PUBLIC
+record_publish_date: "2022-02-22"

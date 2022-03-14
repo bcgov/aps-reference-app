@@ -3,7 +3,12 @@ global:
 
 ui:
   enabled: true
-  replicaCount: 1
+  replicaCount: 2
+
+  rollingUpdate:
+    maxUnavailable: 50%
+    maxSurge: 50%
+
   podSecurityContext:
     fsGroup: *uid_gid
 
@@ -20,9 +25,22 @@ ui:
   imagePullSecrets:
     - name: artifactory-pull
 
+  resources:
+    requests:
+      cpu: 25m
+      memory: 100Mi
+    limits:
+      cpu: 50m
+      memory: 200Mi
+
 api:
   enabled: true
-  replicaCount: 1
+  replicaCount: 2
+
+  rollingUpdate:
+    maxUnavailable: 50%
+    maxSurge: 50%
+
   podSecurityContext:
     fsGroup: *uid_gid
 
@@ -38,3 +56,15 @@ api:
 
   imagePullSecrets:
     - name: artifactory-pull
+
+  resources:
+    requests:
+      cpu: 50m
+      memory: 100Mi
+    limits:
+      cpu: 100m
+      memory: 200Mi
+
+  env:
+    AUDIENCE:
+      value: aps-reference-hello-py-api

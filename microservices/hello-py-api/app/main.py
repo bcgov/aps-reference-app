@@ -4,10 +4,10 @@ from app.auth.userinfo import userinfo_auth
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/session")
 async def root(userinfo: dict = Depends(userinfo_auth), gateway: dict = Depends(gateway_auth)):
-    return {"message": "Hello %s" % userinfo['preferred_username'], "gateway": gateway}
+    return {"message": "Hello!", "userinfo": userinfo, "gateway": gateway}
 
 @app.post("/")
 async def root(userinfo: dict = Depends(userinfo_auth), gateway: dict = Depends(gateway_auth)):
-    return {"message": "Hello %s" % userinfo['preferred_username'], "gateway": gateway}
+    return {"message": "Hello!", "userinfo": userinfo, "gateway": gateway}

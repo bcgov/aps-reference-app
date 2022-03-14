@@ -25,7 +25,7 @@ docker login -u <USER_NAME> -p <USER_PASSWORD> artifacts.developer.gov.bc.ca/${R
 ```
 cd microservices/hello-py-api
 
-docker build --tag artifacts.developer.gov.bc.ca/${REPO_NAME}/hello-py-api .
+docker build --tag artifacts.developer.gov.bc.ca/${REPO_NAME}/hello-py-api:latest .
 docker push artifacts.developer.gov.bc.ca/${REPO_NAME}/hello-py-api
 ```
 
@@ -75,3 +75,9 @@ uvicorn app.main:app --reload
 ```
 npm run dev
 ```
+
+## TODO
+
+- Openapi Spec Creation
+- Prometheus Metrics
+- TLS
