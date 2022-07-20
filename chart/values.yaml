@@ -3,7 +3,7 @@ global:
 
 ui:
   enabled: true
-  replicaCount: 2
+  replicaCount: 1
 
   rollingUpdate:
     maxUnavailable: 50%
@@ -27,15 +27,15 @@ ui:
 
   resources:
     requests:
-      cpu: 25m
-      memory: 100Mi
+      cpu: 10m
+      memory: 25Mi
     limits:
       cpu: 50m
-      memory: 200Mi
+      memory: 150Mi
 
 api:
   enabled: true
-  replicaCount: 2
+  replicaCount: 1
 
   rollingUpdate:
     maxUnavailable: 50%
@@ -59,11 +59,11 @@ api:
 
   resources:
     requests:
-      cpu: 50m
-      memory: 100Mi
+      cpu: 10m
+      memory: 65Mi
     limits:
-      cpu: 100m
-      memory: 200Mi
+      cpu: 50m
+      memory: 150Mi
 
   env:
     AUDIENCE:
